@@ -13,9 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Clear loading message
       activitiesList.innerHTML = "";
 
-      // Clear activity select dropdown
-      activitySelect.innerHTML = '<option value="">-- Select an activity --</option>';
-
       // Populate activities list
       Object.entries(activities).forEach(([name, details]) => {
         const activityCard = document.createElement("div");
@@ -23,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
+        // Participants section
         const participantsHTML = `
           <div class='participants-section'><strong>Participants:</strong>
           ${details.participants.length > 0 ? 
